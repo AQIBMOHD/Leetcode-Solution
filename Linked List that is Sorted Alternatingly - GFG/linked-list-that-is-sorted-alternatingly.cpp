@@ -79,18 +79,19 @@ struct Node
 */
 // your task is to complete this function
 void sort(Node **head)
-{
-     Node* temp=*head;
-     int i=0;vector<int>v;
-     while(temp){
-         v.push_back(temp->data);
-         temp=temp->next;
+{    vector<int>ans;//v=ans
+     Node* curr=*head;
+     
+     
+     while(curr!=NULL){
+         ans.push_back(curr->data);
+         curr=curr->next;
      }
-     temp=*head;
-     sort(v.begin(),v.end());
-     for(;i<v.size();i++){
-         temp->data=v[i];
-         temp=temp->next;
+     curr=*head;
+     sort(ans.begin(),ans.end());
+     for(int i=0;i<ans.size();i++){
+         curr->data=ans[i];
+         curr=curr->next;
      }
      
 }
