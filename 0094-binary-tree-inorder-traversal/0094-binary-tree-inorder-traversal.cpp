@@ -20,7 +20,8 @@ public:
                 st.push(node);
                 node=node->left;
             }
-            else{
+            
+            else{                    // if (node == NULL)
                 if(st.empty()==true)break;
                 node = st.top();
                 st.pop();
